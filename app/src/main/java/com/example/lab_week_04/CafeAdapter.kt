@@ -15,16 +15,23 @@ class CafeAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
         R.string.kopikenangan_title,
     )
 
-    override fun getItemCount(): Int {
-        return TABS_FIXED.size
-    }
+    // Matching descriptions for each cafe
+    private val DESCRIPTIONS = listOf(
+        R.string.starbucks_desc,
+        R.string.janjijiwa_desc,
+        R.string.kopikenangan_desc,
+    )
+
+    override fun getItemCount(): Int = TABS_FIXED.size
 
     override fun createFragment(position: Int): Fragment {
-        // TODO: Later you can pass different data per position
-        return CafeDetailFragment()
+        // Pass the description resource ID instead of hardcoding text
+        return CafeDetailFragment.newInstance(
+            getDescriptionResId(position)
+        )
     }
 
-    fun getTabTitle(position: Int): Int {
-        return TABS_FIXED[position]
-    }
+    fun getTabTitle(position: Int): Int = TABS_FIXED[position]
+
+    fun getDescriptionResId(position: Int): Int = DESCRIPTIONS[position]
 }

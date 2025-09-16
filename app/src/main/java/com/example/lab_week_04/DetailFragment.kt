@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 
 class DetailFragment : Fragment() {
     private val coffeeTitle: TextView?
-        get() = view?.findViewById(R.id.coffee_title)
+        get() = view?.findViewById(R.id.content_description)
     private val coffeeDesc: TextView?
         get() = view?.findViewById(R.id.coffee_desc)
     override fun onCreate(savedInstanceState: Bundle?) {

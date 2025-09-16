@@ -8,12 +8,11 @@
     android:padding="20dp"
     tools:context=".DetailFragment">
     <TextView
-        android:id="@+id/coffee_title"
-        android:textStyle="bold"
-        android:gravity="center"
+        android:id="@+id/content_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="@string/affogato_title"/>
+        android:gravity="center"
+        tools:text="@string/affogato_desc" />
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
